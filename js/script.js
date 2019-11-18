@@ -9,17 +9,29 @@ var result;
 var games;
 var gamesCount=0;
 var score;
-var counter=0;
+var counter=1;
+var Mark;
+var backSound = new Audio();
+backSound.src = "sound/backSound.mp3";
+var correct = new Audio();
+correct.src = "sound/correct.mp3";
+var wrong = new Audio();
+wrong.src = "sound/wrong.mp3";
+
+
 
 //Game Start Function
 function nextGame() {
-    
+    backSound.play();
+    backSound.volume = 0.4;
     //Collect Div Sections to change
     num1 = document.getElementById("num1");
     num2 = document.getElementById("num2");
     sumAnswer = document.getElementById("sumAnswer");
     games = document.getElementById("games");
     score = document.getElementById("scoreTotal");
+    Mark=document.getElementById("Mark");
+    
     
     //Create two random numbers and Create a Multiplied Sum with them
     randomNumber1 = Math.floor((Math.random() *10) + 1);
@@ -32,11 +44,11 @@ function nextGame() {
     
     //Assign value to Answer display 
     sumAnswer.innerHTML="Answer";
-    document.getElementById("Mark").innerHTML="";
+    Mark.innerHTML="Result";
     gamesCount = gamesCount+1;
 
     games.innerHTML=gamesCount;
-    score.innerHTML=counter;
+    
     
 }
 
@@ -46,14 +58,19 @@ function sumGame(){
     
     
     if(result === sumInput){
-        document.getElementById("Mark").innerHTML="Smart Arse!";
-        sumAnswer.innerHTML=result;
+        
+        
+        score.innerHTML=counter;
         counter = counter+1;
+        Mark.innerHTML="Correct!";
+        sumAnswer.innerHTML=result;
+        correct.play();
+        
     }
     else
     {
-        document.getElementById("Mark").innerHTML="Try Another Stupid!";
-        
+        Mark.innerHTML="More practice!";
+        wrong.play();
     }
-    
+   
  }

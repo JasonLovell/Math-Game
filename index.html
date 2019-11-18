@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/style.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,16 +10,22 @@
 </head>
 <body onload="nextGame()">
     <!-- Score -->
-    <div id="score"><h6>Games <span id="games" value=""></span> Score <span id="scoreTotal" value=""></span></h6></div>
-
+    <div id="gameCount">
+        <br>
+        
+        <h2>Game : <span id="games" value=""></span></h2>
+        <br>
+    </div>
+    <div id="score">
+         <br>
+         <h2>Score : <span id="scoreTotal" value=""></span></h2>
+        
+    
     <!-- Container Box-->
     <div id="box">
 
         <!-- Title-->
         <h1 id="gameName">Math Game</h1>
-        <br>
-        <hr>
-        <br>
         <div>
         <div id="block">
 
@@ -31,19 +38,31 @@
         </div>
 
         <br>
+        
         <hr>
         <br>
         <!-- Result Value / Sum Answer-->
         <div id="sumAnswer">Answer</div>
         
-        <input type="text" id="sumInput" placeholder="Enter your guess here..">
+        <div><input type="text" id="sumInput" onfocus="this.value=''"></div>
+        <div>
         <input type="button" onclick="sumGame()" id="pressButton" class="btn" value="Press">
+    </div>
+    <div>
+        <input type="button" onclick="nextGame()" id="pressButton" class="btn" value="Next Game &#8634;">
         
-        <input type="button" onclick="nextGame()" id="pressButton" class="btn" value="Next">
-        
-        <div id="Mark">Result</div>
+    </div>
+    <div id="Mark"></div>
 
     </div>
+    
+</div>
+
+
+
+
+<div id="sign"><section>Created by Jason Lovell &copy 2019</section></div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
