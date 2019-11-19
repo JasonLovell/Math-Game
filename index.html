@@ -44,12 +44,13 @@
         <!-- Result Value / Sum Answer-->
         <div id="sumAnswer">Answer</div>
         
-        <div><input type="text" id="sumInput" onfocus="this.value=''"></div>
+        <div><input id="sumInput" type="text" onfocus="this.value=''"></div>
         <div>
-        <input type="button" onclick="sumGame()" id="pressButton" class="btn" value="Press">
+
+        <input type="hidden" onclick="sumGame()" id="pressButton">
     </div>
     <div>
-        <!-- <input type="button" onclick="nextGame()" id="pressButton" class="btn" value="Next Game &#8634;">-->
+         <input type="button" onclick="nextGame()" id="pressButton" class="btn" value="Skip This Game &#8634;">
         
     </div>
     <div id="Mark"></div>

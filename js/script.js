@@ -17,13 +17,22 @@ var correct = new Audio();
 correct.src = "sound/correct.mp3";
 var wrong = new Audio();
 wrong.src = "sound/wrong.mp3";
+var input = document.getElementById("sumInput");
 
+
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+     event.preventDefault();
+     document.getElementById("pressButton").click();
+    }
+  });
 
 
 //Game Start Function
 function nextGame() {
+    input.value = '';
     backSound.play();
-    backSound.volume = 0.4;
+    backSound.volume = 0.1;
     //Collect Div Sections to change
     num1 = document.getElementById("num1");
     num2 = document.getElementById("num2");
@@ -58,17 +67,13 @@ function sumGame(){
     
     
     if(result === sumInput){
-        
-        
         score.innerHTML=counter;
         counter = counter+1;
         Mark.innerHTML="Correct!";
         sumAnswer.innerHTML=result;
         correct.play();
-            setTimeout(function(){nextGame();}, 3000);
-          
-        
-    }
+        setTimeout(function(){nextGame();}, 3000);
+        }
     else
     {
         Mark.innerHTML="More practice!";
