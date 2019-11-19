@@ -65,6 +65,8 @@ function sumGame(){
         Mark.innerHTML="Correct!";
         sumAnswer.innerHTML=result;
         correct.play();
+            setTimeout(function(){nextGame();}, 3000);
+          
         
     }
     else
