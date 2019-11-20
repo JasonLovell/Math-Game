@@ -32,7 +32,7 @@ input.addEventListener("keyup", function(event) {
 function nextGame() {
     input.value = '';
     backSound.play();
-    backSound.volume = 0.1;
+    backSound.volume = 0.02;
     //Collect Div Sections to change
     num1 = document.getElementById("num1");
     num2 = document.getElementById("num2");
@@ -72,6 +72,7 @@ function sumGame(){
         Mark.innerHTML="Correct!";
         sumAnswer.innerHTML=result;
         correct.play();
+        correct.volume = 0.2;
         setTimeout(function(){nextGame();}, 3000);
         }
     else
